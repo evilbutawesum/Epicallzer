@@ -12,8 +12,8 @@ me.innerText = "😎 " + name;
 userBox.appendChild(me);
 
 const games = [
-    { name: "Snake", url: "https://example.com/snake" },
-    { name: "Tetris", url: "https://example.com/tetris" }
+    { name: "Snake", url: "games/snake/index.html" },
+    { name: "Tetris", url: "games/tetris/index.html" }
 ];
 
 function leave(){
@@ -21,11 +21,12 @@ function leave(){
 }
 
 function toggleGames(){
-    const menu = document.getElementById("gameMenu");
+    const overlay = document.getElementById("gameOverlay");
+    const list = document.getElementById("gameList");
 
-    if(menu.style.display === "none"){
-        menu.style.display = "block";
-        menu.innerHTML = "";
+    if(overlay.style.display === "none" || overlay.style.display === ""){
+        overlay.style.display = "flex";
+        list.innerHTML = "";
 
         games.forEach(g => {
             const btn = document.createElement("button");
@@ -33,14 +34,29 @@ function toggleGames(){
 
             btn.onclick = () => {
                 const w = window.open("about:blank", "_blank");
+
+                w.document.body.style.margin = "0";
+
                 w.document.write(`
-                    <iframe src="${g.url}" style="width:100vw;height:100vh;border:none;"></iframe>
+                    <style>
+                        html,body{
+                            margin:0;
+                            height:100%;
+                            overflow:hidden;
+                        }
+                        iframe{
+                            border:none;
+                            width:100vw;
+                            height:100vh;
+                        }
+                    </style>
+                    <iframe src="${g.url}"></iframe>
                 `);
             };
 
-            menu.appendChild(btn);
+            list.appendChild(btn);
         });
     } else {
-        menu.style.display = "none";
+        overlay.style.display = "none";
     }
 }
