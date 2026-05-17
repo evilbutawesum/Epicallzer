@@ -1,0 +1,30 @@
+body{
+    margin:0;
+    background:#111;
+    color:white;
+    font-family:Arial;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+input{
+    padding:12px;
+    margin:5px 0;
+    width:100%;
+    border:none;
+    border-radius:8px;
+    background:#2a2a2a;
+    color:white;
+}
+
+button{
+    padding:12px;
+    width:100%;
+    border:none;
+    border-radius:8px;
+    background:#4c7dff;
+    color:white;
+    cursor:pointer;
+}
