@@ -13,7 +13,8 @@ userBox.appendChild(me);
 
 const games = [
     { name: "Snake", url: "games/snake/index.html" },
-    { name: "Tetris", url: "games/tetris/index.html" }
+    { name: "Tetris", url: "games/tetris/index.html" },
+    { name: "Who's Your Daddy", url: "games/whosyourdaddy.html" }
 ];
 
 function leave(){
@@ -43,6 +44,7 @@ function toggleGames(){
                             margin:0;
                             height:100%;
                             overflow:hidden;
+                            background:black;
                         }
                         iframe{
                             border:none;
