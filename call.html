@@ -15,7 +15,13 @@
 <button onclick="leave()">Leave</button>
 <button onclick="toggleGames()">🎮</button>
 
-<div id="gameMenu" style="display:none;"></div>
+<div id="gameOverlay" style="display:none;">
+    <div id="gamePopup">
+        <h3>Games</h3>
+        <div id="gameList"></div>
+        <button onclick="toggleGames()">Close</button>
+    </div>
+</div>
 
 </div>
 
